@@ -10,6 +10,10 @@ def multiply(a, b):
     """Множення двох чисел"""
     return a * b
 
+def power(a, b):
+    """Піднесення числа a до степеня b"""
+    return a ** b
+
 def divide(a, b):
     """Ділення двох чисел"""
     if b != 0:
@@ -18,17 +22,17 @@ def divide(a, b):
         return "Помилка: ділення на нуль!"
 
 print("=== Простий калькулятор ===")
-print("Операції: +, -, *, /")
+print("Операції: +, -, *, /, **")
 print("Для виходу введіть 'exit'")
 
 while True:
-    operation = input("\nВведіть операцію (+, -, *, /) або 'exit': ")
+    operation = input("\nВведіть операцію (+, -, *, /, **) або 'exit': ")
 
     if operation.lower() == 'exit':
         print("До побачення!")
         break
 
-    if operation not in ['+', '-', '*', '/']:
+    if operation not in ['+', '-', '*', '/', '**']:
         print("Невірна операція!")
         continue
 
@@ -44,6 +48,8 @@ while True:
             result = multiply(num1, num2)
         elif operation == '/':
             result = divide(num1, num2)
+        elif operation == '**':
+            result = power(num1, num2)
 
         print(f"Результат: {result}")
 
